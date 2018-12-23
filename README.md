@@ -18,7 +18,7 @@ cat best-fiction-2017.urls.txt | xargs -P8 -I {} sh -c 'curl {} > best-fiction-2
 The downloaded content can then be parsed by looking for "by Some Author" strings. This yields a number of spurious entries, but because we're mapping it to agent listings later on, it won't matter.
 
 ```
-cat best-fiction-2017.data/* | grep -o 'by [A-Z][A-Za-z]\+ [A-Z][A-Za-z]\+' | cut -d\ -f2- | sort -u > best-authors-2017.txt
+cat best-fiction-2017.data/* | grep -o 'by [A-Z][A-Za-z]\+ [A-Z][A-Za-z]\+' | cut -d\  -f2- | sort -u > best-authors-2017.txt
 ```
 
 ### Literary Agents List
