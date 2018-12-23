@@ -12,7 +12,7 @@ A Google search for "best fiction 2017" yields a decent number of URLs to bestse
 
 ```
 mkdir best-fiction-2017.data
-cat best-fiction-2017.urls.txt | xargs -P8 -I {} sh -c 'curl {} > best-fiction-2017.data/$(echo {} | md5sum | cut -d\ -f1) || true'
+cat best-fiction-2017.urls.txt | xargs -P8 -I {} sh -c 'curl {} > best-fiction-2017.data/$(echo {} | md5sum | cut -d\  -f1) || true'
 ```
 
 The downloaded content can then be parsed by looking for "by Some Author" strings. This yields a number of spurious entries, but because we're mapping it to agent listings later on, it won't matter.
